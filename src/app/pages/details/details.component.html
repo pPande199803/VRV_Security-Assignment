@@ -1,0 +1,23 @@
+<div class="card">
+    <div class="user-card">
+        @for (item of user; track $index) {
+
+        <h2>{{ item.userName }}</h2>
+        <p><strong>Contact:</strong> {{ item.userContact }}</p>
+        <p><strong>Email:</strong> {{ item.userEmailId }}</p>
+        <p><strong>User Type:</strong> {{ item.userType }}</p>
+        <p><strong>Role:</strong> {{ item.role }}</p>
+        <p><strong>Status:</strong> {{ item.userStatus }}</p>
+
+        <div class="permissions">
+            <h4>Permissions:</h4>
+            <ul>
+                <li><strong>Read:</strong> <input type="checkbox" [checked]="item.permission.read" disabled /></li>
+                <li><strong>Edit:</strong> <input type="checkbox" [checked]="item.permission.edit" disabled /></li>
+                <li><strong>Delete:</strong> <input type="checkbox" [checked]="item.permission.delete" disabled /></li>
+            </ul>
+        </div>
+        }
+    </div>
+    <a routerLink="/" class="btn btn-secondary d-grid col-3 mt-2 mx-auto">Back</a>
+</div>

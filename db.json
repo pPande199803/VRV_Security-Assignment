@@ -1,0 +1,158 @@
+{
+  "userDetails": [
+    {
+      "userName": "yash Oberoy",
+      "userContact": 7589654875,
+      "userEmailId": "yash@gmail.com",
+      "userType": "Temporary",
+      "role": "User",
+      "userStatus": "active",
+      "permission": {
+        "read": true,
+        "edit": false,
+        "delete": false
+      },
+      "id": 1
+    },
+    {
+      "id": 2,
+      "userName": "Ashya Chavhan",
+      "userContact": "9876543210",
+      "userEmailId": "ashya@gmail.com",
+      "userType": "temporary",
+      "role": "Admin",
+      "userStatus": "active",
+      "permission": {
+        "read": true,
+        "edit": true,
+        "delete": true
+      }
+    },
+    {
+      "id": 4,
+      "userName": "Ramesh Chavhan",
+      "userContact": "9876543210",
+      "userEmailId": "ramesh12@gmail.com",
+      "userType": "parmanent",
+      "role": "Admin",
+      "userStatus": "active",
+      "permission": {
+        "read": true,
+        "edit": true,
+        "delete": true
+      }
+    },
+    {
+      "userName": "yash Oberoy",
+      "userContact": 7589654875,
+      "userEmailId": "yash@gmail.com",
+      "userType": "Temporary",
+      "role": "Admin",
+      "userStatus": "active",
+      "permission": {
+        "read": true,
+        "edit": true,
+        "delete": true
+      },
+      "id": 5
+    },
+    {
+      "userName": "yash Oberoy",
+      "userContact": 7589654875,
+      "userEmailId": "email@gmail.com",
+      "userType": "Temporary",
+      "role": "User",
+      "userStatus": "inActive",
+      "permission": {
+        "read": true,
+        "edit": false,
+        "delete": false
+      },
+      "id": 6
+    },
+    {
+      "userName": "dfhsdf sdfghjsdf",
+      "userContact": 7589654875,
+      "userEmailId": "a@gmail.com",
+      "userType": "Temporary",
+      "role": "User",
+      "userStatus": "active",
+      "permission": {
+        "read": true,
+        "edit": false,
+        "delete": false
+      },
+      "id": 7
+    },
+    {
+      "userName": "Ramesh Tyade",
+      "userContact": 9658475852,
+      "userEmailId": "yash@gmail.com",
+      "userType": "Temporary",
+      "role": "User",
+      "userStatus": "inActive",
+      "permission": {
+        "read": true,
+        "edit": false,
+        "delete": false
+      },
+      "id": 8
+    },
+    {
+      "userName": "yash Oberoy",
+      "userContact": 7589654875,
+      "userEmailId": "yash@gmail.com",
+      "userType": "parmanent",
+      "role": "User",
+      "userStatus": "inActive",
+      "permission": {
+        "read": true,
+        "edit": false,
+        "delete": false
+      },
+      "id": 9
+    },
+    {
+      "userName": "Ramesh Tyade",
+      "userContact": 9658475852,
+      "userEmailId": "ramesh@gmail.com",
+      "userType": "Temporary",
+      "role": "User",
+      "userStatus": "active",
+      "permission": {
+        "read": true,
+        "edit": false,
+        "delete": false
+      },
+      "id": 10
+    },
+    {
+      "userName": "yash Oberoy",
+      "userContact": 9658475852,
+      "userEmailId": "yash@gmail.com",
+      "userType": "parmanent",
+      "role": "Admin",
+      "userStatus": "active",
+      "permission": {
+        "read": true,
+        "edit": true,
+        "delete": true
+      },
+      "id": 11
+    },
+    {
+      "userName": "Ramesh Tyade",
+      "userContact": 9658475852,
+      "userEmailId": "ashya@gmail.com",
+      "userType": "Temporary",
+      "role": "User",
+      "userStatus": "active",
+      "permission": {
+        "read": true,
+        "edit": false,
+        "delete": false
+      },
+      "id": 12
+    }
+  ]
+}

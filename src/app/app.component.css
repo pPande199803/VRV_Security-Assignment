@@ -1,0 +1,145 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Full page height */
+html, body, .wrapper {
+  height: 100%;
+}
+
+/* Sidebar styles */
+#sidebar {
+  background: #343a40;
+  color: white;
+  width: 250px;
+  position: fixed;
+  left: 0;
+  top: 30px;
+  bottom: 0;
+  transition: 0.3s;
+  padding-top: 20px;
+  z-index: 1;
+}
+
+
+#sidebar.active {
+  left: -250px;
+}
+
+#sidebar .sidebar-header {
+  text-align: center;
+}
+
+
+#sidebar ul {
+  padding: 0;
+}
+
+#sidebar ul li {
+  list-style: none;
+}
+
+#sidebar ul li a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  display: block;
+  transition: 0.3s;
+  padding: 20px;
+  text-align: center;
+  margin: 30px;
+  border-start-end-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+#sidebar ul li a:hover {
+  background-color: #495057;
+}
+
+#sidebar.active~ #content .container{
+  transform: translate(-242px, 0px);
+  /* margin: 0px 80px; */
+  transform: translateX(-120px);
+}
+
+/* Content Area */
+#content {
+  margin-left: 250px;
+  transition: margin-left 0.3s;
+}
+
+#content .container{
+  margin: 0;
+  padding: 10px;
+}
+
+#content #navbar {
+  margin-bottom: 20px;
+}
+
+/* Toggle button */
+.navbar {
+  padding: 15px;
+  transform: translate(-250px, 0px);
+  width: 100vw;
+  z-index: 999;
+  position: fixed;
+}
+
+.navbar .btn-info {
+  color: white;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+
+.navbar .btn-info:hover {
+  background-color: #138496;
+}
+.navbar{
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.active{
+  color: whitesmoke;
+  border-bottom: 2px solid gray;
+
+}
+
+
+/* Mobile view */
+@media (max-width: 768px) {
+  #sidebar {
+    width: 100%;
+  }
+
+  #sidebar.active {
+    left: 100%;
+  }
+
+  #content #navbar {
+    padding-left: 15px;
+  }
+  #content .container {
+    transform: translateX(-242px);
+    width: 100vw;
+  }
+
+  #sidebar ul li a {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    margin: 50px;
+  }
+
+  #sidebar.active~ #content .container{
+    transform: translateX(-250px);
+  }
+
+
+}

@@ -1,27 +1,51 @@
-# AdminDashboard
+# Admin Dashboard - User and Role Management
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.4.
+This project is a basic admin dashboard built using **Angular 18** for managing **users** and **roles**. It features CRUD operations on users and roles, along with dynamic permission management, and simulates API calls using `json-server`.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### 1. **User Management**
+- View a list of users.
+- Add, edit, or delete users.
+- Assign roles to users and manage their status (Active/Inactive).
 
-## Code scaffolding
+### 2. **Role Management**
+- Create, edit, and delete roles.
+- Define roles with associated permissions (Read, Write, Delete, etc.).
+- Assign roles to users.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 3. **Dynamic Permissions**
+- Assign or modify permissions for each role.
+- Easily view and update permissions for any role.
 
-## Build
+### 4. **Custom API Simulation**
+- CRUD operations are simulated using `json-server` as the mock API backend.
+- Provides realistic API responses for managing users, roles, and permissions.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+---
 
-## Running unit tests
+## Project Setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
 
-## Running end-to-end tests
+Make sure you have the following installed:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- **Node.js** (Version 16 or later)
+- **Angular CLI** (Version 18 or later)
+- **json-server** (for simulating the backend API)
 
-## Further help
+### 1. Clone the Repository
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+First, clone the project repository:
+git clone https://github.com/pPande199803/admin-dashboard.git
+cd admin-dashboard
+
+
+
+2. Install Dependencies
+Run the following command to install the necessary dependencies for the Angular project:
+
+npm install
+Also, install json-server globally to simulate the backend:
+
+json-server --watch db.json

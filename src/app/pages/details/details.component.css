@@ -1,0 +1,40 @@
+.card{
+    margin-top: 60px;
+}
+.user-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+  }
+
+  .user-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .user-card p {
+    font-size: 18px;
+    margin: 10px 0px;
+  }
+
+  .permissions {
+    margin-top: 20px;
+  }
+
+  .permissions ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .permissions li {
+    font-size: 18px;
+  }
+
+  input[type="checkbox"] {
+    transform: scale(1.2); /* Make checkboxes slightly larger */
+    margin-left: 10px;
+  }

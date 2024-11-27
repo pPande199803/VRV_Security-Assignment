@@ -1,0 +1,178 @@
+<div class="top-side">
+    <div class="topSide">
+        <div class="add-data">
+            <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal" id="openModal"
+                (click)="formInit()">Add Data +</button>
+        </div>
+        <div class="search mt-2 mb-2">
+            <input type="text" class="form-control" placeholder="Search By Name.." [(ngModel)]="searchQuery"
+                (input)="filteredData()">
+        </div>
+
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table table-bordered table-responsive">
+        <thead>
+            <tr class="table-secondary text-center">
+                <th scope="col">#</th>
+                <th scope="col">Full Name</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">Email-Id</th>
+                <th scope="col">UserStatus</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of allUserData | paginate: { itemsPerPage: 10, currentPage: p } ; track $index) {
+
+            <tr class="text-center">
+                <th scope="row">{{$index + 1}}</th>
+                <td>{{item.userName}}</td>
+                <td>{{item.userContact}}</td>
+                <td>{{item.userEmailId}}</td>
+                <td [ngClass]="item.userStatus == 'active'? 'admin-row' : 'user-row'">{{item.userStatus}}</td>
+                <td class="text-center action">
+            <tr>
+                <td><i class="fa fa-eye text-warning pointer" title="view" routerLink="/user-detail/{{item.id}}"></i>
+                </td>
+                <td><i class="fa fa-pencil mx-2 text-secondary pointer" title="edit" (click)="editUserData(item)"></i>
+                </td>
+                <td><i class="fa fa-trash text-danger pointer" title="delete" (click)="deleteUser(item.id)"></i></td>
+            </tr>
+            </td>
+            </tr>
+            }
+
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- modal for Add New User -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">User Details Form</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close"></button>
+            </div>
+            <div class="modal-body p-2">
+                <form [formGroup]="userForm">
+                    <div class="row m-2 p-2">
+                        <div class="col-md-6">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" placeholder="eg.Yash Roy" formControlName="userName"
+                                name="userName" required>
+                            <span class="text-danger"
+                                *ngIf="(userFormControl['userName'].touched) && userFormControl['userName'].errors">
+                                Full Name is required
+                            </span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">Email Address</label>
+                            <input type="text" class="form-control" placeholder="eg.abc@gmail.com"
+                                formControlName="userEmailId" name="userEmailId" required>
+                            <span class="text-danger"
+                                *ngIf="(userFormControl['userEmailId'].touched) && userFormControl['userEmailId'].errors">
+                                Email-Id is required
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row m-2 p-2">
+                        <div class="col-md-6">
+                            <label class="form-label">Contact Number</label>
+                            <input type="number" class="form-control" placeholder="eg.9876543211"
+                                formControlName="userContact" name="userContact" required>
+                            <span class="text-danger"
+                                *ngIf="(userFormControl['userContact'].touched) && userFormControl['userContact'].errors">
+                                Contact Number is required
+                            </span>
+                            <span class="text-danger" *ngIf="(userFormControl['userContact'].hasError('minlength'))">
+                                Contact Number upto 10 digits
+                            </span>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label">User Type</label>
+                            <input type="text" class="form-control" placeholder="eg. Permanent/Temporary"
+                                formControlName="userType" name="userType" required>
+                        </div>
+                        <span class="text-danger"
+                            *ngIf="(userFormControl['userType'].touched) && userFormControl['userType'].errors">
+                            User Type is required
+                        </span>
+                    </div>
+                    <div class="row  m-2 p-2">
+                        <div class="col-md-3">
+                            <label class="form-label">User Status</label>
+                            <select class="form-control" formControlName="userStatus" required>
+                                <option [defaultSelected]="true">Select Status</option>
+                                <option value="active"> Active </option>
+                                <option value="inActive"> In-Active </option>
+                            </select>
+                            <span class="text-danger"
+                                *ngIf="(userFormControl['userStatus'].touched) && userFormControl['userStatus'].errors">
+                                User Status is required
+                            </span>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label mt-2">Role</label>
+                            <br>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" value="Admin" formControlName="role"
+                                    name="role">
+                                <label class="form-check-label">Admin</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" value="User" formControlName="role"
+                                    name="role">
+                                <label class="form-check-label">User</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6" formGroupName="permission">
+                            <label class="form-label">Permission</label>
+                            <br>
+
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="read"
+                                    [value]="checked ? true : false" formControlName="read">
+                                <label class="form-check-label">Read</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="edit"
+                                    [value]="checked ? true : false" formControlName="edit">
+                                <label class="form-check-label">Edit</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="delete"
+                                    [value]="checked ? true : false" formControlName="delete">
+                                <label class="form-check-label">Delete</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" *ngIf="isAdd" [disabled]="userForm.invalid"
+                    (click)="formSubmit()">Save</button>
+                <button type="button" class="btn btn-warning" *ngIf="isEdit" [disabled]="userForm.invalid"
+                    (click)="updateUserData()">Update</button>
+            </div>
+        </div>
+    </div>
+</div>

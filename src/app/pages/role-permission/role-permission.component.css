@@ -1,0 +1,22 @@
+
+.top-side{
+    margin-top: 60px;
+}
+
+#openModal{
+    display: none;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.search{
+    margin: auto;
+    width: 400px ;
+}
+
+  .table{
+    height: 100%;
+    width: 100%;
+  }

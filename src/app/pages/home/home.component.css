@@ -1,0 +1,32 @@
+.action{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.search{
+    margin: auto;
+    width: 400px ;
+}
+
+.admin-row {
+    background-color: lightgreen;  /* Green for admin */
+    color: darkgreen;
+  }
+  .top-side{
+    margin-top: 70px;
+}
+
+  .user-row {
+    background-color: rgb(230, 173, 173);   /* Blue for user */
+    color: rgba(255, 0, 0, 0.553);
+  }
+
+  .table{
+    height: 100%;
+    width: 100%;
+  }
